@@ -3,14 +3,36 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserComponent } from './Component/user/user.component';
+import { AdminComponent } from './Component/admin/admin.component';
+import { RestaurantComponent } from './Component/restaurant/restaurant.component';
+import { CartComponent } from './Component/cart/cart.component';
+import { UserLoginComponent } from './Component/user-login/user-login.component';
+import { WelcomeComponent } from './Component/welcome/welcome.component';
+import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './Component/admin-login/admin-login.component';
+import { AddRestaurantComponent } from './Component/add-restaurant/add-restaurant.component';
+import { EditRestaurantComponent } from './Component/edit-restaurant/edit-restaurant.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserComponent,
+    AdminComponent,
+    RestaurantComponent,
+    CartComponent,
+    UserLoginComponent,
+    WelcomeComponent,
+    AdminLoginComponent,
+    AddRestaurantComponent,
+    EditRestaurantComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
