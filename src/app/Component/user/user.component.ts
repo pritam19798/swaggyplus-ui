@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-user',
@@ -9,13 +10,29 @@ import { Router } from '@angular/router';
 export class UserComponent implements OnInit {
 
   constructor(
-    private router:Router
+    private router:Router,
+    private route:ActivatedRoute,
+    private service:UserService
   ) { }
 
+  restaurents:any
+  userId=this.route.snapshot.params['id']
   ngOnInit(): void {
+
+    this.service.getrestaurent().subscribe(
+      data=>{
+        this.restaurents=data
+        console.log(data)
+      },
+      err=>console.log(err)
+    )
+    console.log(this.userId)
+
   }
-  menu(){
-    this.router.navigate(['/restaurant',1])
+  menu(restaurentId,restaurentName){
+    this.service.restaurentName=restaurentName
+
+    this.router.navigate(['/restaurant',restaurentId])
   }
 
 }

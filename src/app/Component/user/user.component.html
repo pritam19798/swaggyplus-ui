@@ -1,2 +1,9 @@
 <p>user works!</p>
-<button (click)="menu()">see menu</button>
+<div *ngFor="let restaurent of restaurents">
+    Name:{{restaurent.restaurentName}}   
+     Rating:{{restaurent.restaurentRating}}   
+     Address:{{restaurent.restaurentAdress}}   
+     <span *ngIf="restaurent.isActive">Opend</span> 
+     <span *ngIf="!restaurent.isActive">Closed</span>
+    <button (click)="menu(restaurent.restaurentId,restaurent.restaurentName)">see menu</button>
+</div>

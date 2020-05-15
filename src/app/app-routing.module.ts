@@ -10,18 +10,20 @@ import { UserLoginComponent } from './Component/user-login/user-login.component'
 import { AdminLoginComponent } from './Component/admin-login/admin-login.component';
 import { AddRestaurantComponent } from './Component/add-restaurant/add-restaurant.component';
 import { EditRestaurantComponent } from './Component/edit-restaurant/edit-restaurant.component';
+import { UserRouteGuard } from './user-route.guard';
 
 
 const routes: Routes = [
   {path:'',component:WelcomeComponent},
   {path:'user/login',component:UserLoginComponent},
   {path:'admin/login',component:AdminLoginComponent},
-  {path:'user/:id',component:UserComponent},
+  {path:'user/:id',component:UserComponent,canActivate:[UserRouteGuard]},
+  {path:'restaurant/:id',component:RestaurantComponent,canActivate:[UserRouteGuard]},
+  {path:'cart',component:CartComponent},
   {path:'admin/:id',component:AdminComponent},
-  {path:'restaurant/:id',component:RestaurantComponent},
   {path:'add-restaurant',component:AddRestaurantComponent},
   {path:'edit-restaurant/:id',component:EditRestaurantComponent},
-  {path:'cart',component:CartComponent}
+  
 ];
 
 @NgModule({

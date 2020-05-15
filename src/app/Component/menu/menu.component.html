@@ -1,0 +1,18 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        
+            <div><a routerLink="" class="navbar-brand">Swaggy</a></div>
+
+            <ul class="navbar-nav">
+                <li><a class="nav-link" routerLink="">Home</a></li>
+                
+            </ul>
+
+            <ul class="navbar-nav navbar-collapse justify-content-end">
+                <li><a *ngIf="service.islogin()" routerLink="/login" class="nav-link">User Login</a></li>
+                <li><a *ngIf="!service.islogin()" routerLink="/logout" class="nav-link">Logout</a></li>
+            </ul>
+
+        
+    </nav>
+</header>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService, User } from 'src/app/api.service';
+import { UserService, User } from 'src/app/user.service';
 
 
 @Component({
@@ -9,27 +9,39 @@ import { ApiService, User } from 'src/app/api.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
- public user:User=new User("","");
- message:any;
- alert:any;
+
   constructor(
-    private router:Router,private apiservice:ApiService
+    private router:Router,
+    private apiservice:UserService
   ) { }
+
+
+  public user:User=new User("","");
+  message:any;
+  alert:any;
 
   ngOnInit(): void {
   }
 
   loginHandle(){
     let resp=this.apiservice.userValidation(this.user);
-    resp.subscribe(data=>this.message=data);
-    console.log(this.message);
+    
+    resp.subscribe(
+      data=>{
+        
+        this.message=data
+        console.log(this.message);
+        sessionStorage.setItem("userId",this.message)
+        if(this.message==this.user.userId){
+          this.router.navigate(['user',this.message]);
+          }
+        else{
+          this.alert="please give the right information";
+        }
+      });
+    
   
-    if(this.message==this.user.userId){
-    this.router.navigate(['user',this.message]);
-    }
-    else{
-    this.alert="please give the right information";
-    }
+
   }
 
 
