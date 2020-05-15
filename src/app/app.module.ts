@@ -32,7 +32,8 @@ import { EditRestaurantComponent } from './Component/edit-restaurant/edit-restau
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

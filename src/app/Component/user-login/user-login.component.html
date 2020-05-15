@@ -1,2 +1,7 @@
 <p>user-login works!</p>
-<button (click)="loginHandle()">login</button>
+<h1>{{alert}}</h1>
+<label>UserId</label>
+<input type="text" [(ngModel)]="user.userId" id="userId" name="user"> 
+<label>Password</label>
+<input type="password" [(ngModel)]="user.password" id="pass" name="inppass">
+<button (click)="loginHandle()">Login</button>
