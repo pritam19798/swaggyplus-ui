@@ -18,6 +18,7 @@ export class UserService {
   islogin(){
     return !(sessionStorage.getItem("userId")==null)
   }
+ 
 
   getrestaurent(){
     return this.http.get(`${API_URL}/res/getrestaurent`)

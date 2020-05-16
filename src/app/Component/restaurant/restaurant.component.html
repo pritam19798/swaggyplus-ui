@@ -1,15 +1,17 @@
-<p>restaurant works!</p>
-restaurent name={{this.restaurentName}}
-<div>
-    <ul>
-        <li *ngFor="let dish of dishes">
-            <img src={{dish.imageUrl}} alt={{dish.dishName}} width="193" height="130"><br>
-            {{dish.dishName}} at Rs. {{dish.price}}
-            <p>{{dish.shortDescription}}</p>
-            <span *ngIf="dish.freeDelivery">Avaliable for free delivery</span>
-            <button>Add to cart</button>
+<div class="container"><br><h1 style="font-size:40px;
+    font-family:Impact, Charcoal, sans-serif;
+    color:rgb(142, 167, 241);
+    font-style: italic">{{this.restaurentName}} Restaurent Dishes</h1></div>
+      <div class="container" align="center">
+        <div class="row">
+        <div class="col-sm-3" *ngFor="let dish of dishes">
+            <img src={{dish.imageUrl}} alt={{dish.dishName}} width="100%" height="150"><br>
+           <h4> {{dish.dishName}} at Rs. {{dish.price}}</h4>
+            <p>About:&nbsp;{{dish.shortDescription}}</p>
+           <h5> <span *ngIf="dish.freeDelivery">Avaliable for free delivery</span></h5>
+            <button class="btn btn-primary">Add to cart</button>
             <hr>
-        </li>
-    </ul>
+
 </div>
+        </div></div>
 

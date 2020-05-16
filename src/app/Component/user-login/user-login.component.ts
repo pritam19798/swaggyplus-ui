@@ -18,7 +18,7 @@ export class UserLoginComponent implements OnInit {
 
   public user:User=new User("","");
   message:any;
-  alert:any;
+  alert:string;
   userName:any;
   ngOnInit(): void {
   }
@@ -40,7 +40,9 @@ export class UserLoginComponent implements OnInit {
           
 
         if(this.message==this.user.userId){
+        
           this.router.navigate(['user',this.message]);
+          
           }
         else{
           this.alert="please give the right information";

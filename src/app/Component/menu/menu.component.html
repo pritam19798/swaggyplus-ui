@@ -1,19 +1,41 @@
+
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" style="font-size: large;" href="#">Swaggy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a *ngIf="!service.islogin()" class="nav-link" routerLink="">Home</a>
+              <a *ngIf="service.islogin()" class="nav-link">{{userName}}</a>
+            </li>
+            <li *ngIf="!service.islogin()" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="user/login">User</a>
+                <a class="dropdown-item" href="#">Admin</a>
+              </div>
+            </li>
+              <li><a *ngIf="service.islogin()"  class="nav-link" routerLink="" (click)="sesclr()">Logout</a></li>
+           
+          </ul>
+          <img *ngIf="service.islogin()" src="https://image.flaticon.com/icons/png/512/34/34627.png" width="2%" height="2%">&nbsp;
+          <a *ngIf="service.islogin()" href="#" class="btn btn-info btn-lg">
+            Cart
+          </a>&nbsp;
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          
+         
+        </div>
         
-            <div><a routerLink="" class="navbar-brand">Swaggy</a></div>
+      </nav>
 
-            <ul class="navbar-nav">
-                <li><a *ngIf="!service.islogin()" class="nav-link" routerLink="">Home</a></li>
-                <li><a *ngIf="service.islogin()" class="nav-link">{{userName}}</a></li>
-            </ul>
-
-            <ul class="navbar-nav navbar-collapse justify-content-end">
-               
-                <li><a *ngIf="!service.islogin()" routerLink="user/login" class="nav-link">User Login</a></li>
-                <li><a *ngIf="service.islogin()"  class="nav-link" routerLink="" (click)="sesclr()">Logout</a></li>
-            </ul>
-
-        
-    </nav>
 </header>

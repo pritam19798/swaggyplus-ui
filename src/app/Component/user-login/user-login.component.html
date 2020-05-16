@@ -1,7 +1,26 @@
-<p>user-login works!</p>
+<br><br>
 <h1>{{alert}}</h1>
-<label>UserId</label>
-<input type="text" [(ngModel)]="user.userId" id="userId" name="user"> 
-<label>Password</label>
-<input type="password" [(ngModel)]="user.password" id="pass" name="inppass">
-<button (click)="loginHandle()">Login</button>
+<div class="container" align="center">
+    <div class="row">
+       <div class="col-sm-6">
+           <h3>User Login</h3>
+<form align="center">
+
+<H2>
+<label style="font-size:20px;margin-left:3%">UserId</label>
+<input style="width:40%; float:right; margin-right: 10%;" type="text" class="form-control" [(ngModel)]="user.userId" id="userId" name="user"> <br>
+<label for="pass" style="font-size:20px;margin-left:3%">Password</label>
+<input style="width:40%; float:right; margin-right: 10%;" type="password" class="form-control" [(ngModel)]="user.password" id="pass" name="inppass"><br>
+</H2>
+<br><button class="btn btn-primary" (click)="loginHandle()">Login</button><br><hr>
+
+</form>
+</div>
+<div class="col-sm-4"><br><br>
+  <h3 style="font-size: 60px; color: aliceblue; margin-left: 20%;">Good Food <br>Good Life</h3>
+
+</div>
+
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>

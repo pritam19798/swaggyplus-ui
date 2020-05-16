@@ -1,0 +1,27 @@
+h2{
+    font-size:40px;
+    font-family:Impact, Charcoal, sans-serif;
+    color:rgb(1, 4, 14);
+    font-style: italic
+}
+.col-sm-3{
+    background-color: aliceblue;
+    border-radius: 5%;
+    width: 25%;
+    row-gap: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+.col-sm-3:hover{
+    background-color: rgb(179, 245, 179);
+   border: 2px solid rgb(32, 10, 230);
+    row-gap: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transition: 0.6s ease;
+}

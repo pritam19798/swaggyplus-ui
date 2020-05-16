@@ -14,7 +14,11 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.service.islogin()){
+  
     this.userName=sessionStorage.getItem("userName")
+    
+    }
   }
   sesclr(){
     sessionStorage.clear();
