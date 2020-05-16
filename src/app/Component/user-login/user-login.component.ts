@@ -19,7 +19,7 @@ export class UserLoginComponent implements OnInit {
   public user:User=new User("","");
   message:any;
   alert:any;
-
+  userName:any;
   ngOnInit(): void {
   }
 
@@ -32,15 +32,26 @@ export class UserLoginComponent implements OnInit {
         this.message=data
         console.log(this.message);
         sessionStorage.setItem("userId",this.message)
+
+        this.apiservice.getUserName(this.message).subscribe(data=>{
+          this.userName=data;
+          sessionStorage.setItem("userName",this.userName)
+        })
+          
+
         if(this.message==this.user.userId){
           this.router.navigate(['user',this.message]);
           }
         else{
           this.alert="please give the right information";
         }
+        
       });
-    
+     
+        
   
+    
+    
 
   }
 

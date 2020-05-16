@@ -3,12 +3,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class UserComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
+  
   constructor(
     private router:Router,
     private route:ActivatedRoute,
@@ -27,16 +28,14 @@ export class UserComponent implements OnInit {
       err=>console.log(err)
     )
     console.log(this.userId)
-    this.service.getUserName(sessionStorage.getItem("userId")).subscribe(
-      data=>console.log(data)
-    )
 
   }
-  
   menu(restaurentId,restaurentName){
     this.service.restaurentName=restaurentName
 
     this.router.navigate(['/restaurant',restaurentId])
   }
+
+  
 
 }

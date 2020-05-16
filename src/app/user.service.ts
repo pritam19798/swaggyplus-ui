@@ -25,6 +25,9 @@ export class UserService {
   getDish(restaurentId){
     return this.http.get(`${API_URL}/res/dishes?id=${restaurentId}`)
   }
+  getUserName(Id){
+    return this.http.get(`${API_URL}/user/getUserName/?Id=${Id}`,{responseType:'text' as 'json'})
+  }
 
 }
   export class User{

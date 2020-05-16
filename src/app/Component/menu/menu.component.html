@@ -4,13 +4,14 @@
             <div><a routerLink="" class="navbar-brand">Swaggy</a></div>
 
             <ul class="navbar-nav">
-                <li><a class="nav-link" routerLink="">Home</a></li>
-                
+                <li><a *ngIf="!service.islogin()" class="nav-link" routerLink="">Home</a></li>
+                <li><a *ngIf="service.islogin()" class="nav-link">{{userName}}</a></li>
             </ul>
 
             <ul class="navbar-nav navbar-collapse justify-content-end">
+               
                 <li><a *ngIf="!service.islogin()" routerLink="user/login" class="nav-link">User Login</a></li>
-                <li><a *ngIf="service.islogin()"  class="nav-link">Logout</a></li>
+                <li><a *ngIf="service.islogin()"  class="nav-link" routerLink="" (click)="sesclr()">Logout</a></li>
             </ul>
 
         

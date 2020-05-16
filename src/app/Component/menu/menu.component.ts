@@ -8,11 +8,15 @@ import { UserService } from 'src/app/user.service';
 })
 export class MenuComponent implements OnInit {
 
+  userName:any;
   constructor(
     public service:UserService
   ) { }
 
   ngOnInit(): void {
+    this.userName=sessionStorage.getItem("userName")
   }
-
+  sesclr(){
+    sessionStorage.clear();
+  }
 }

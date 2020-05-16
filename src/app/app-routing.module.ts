@@ -11,10 +11,11 @@ import { AdminLoginComponent } from './Component/admin-login/admin-login.compone
 import { AddRestaurantComponent } from './Component/add-restaurant/add-restaurant.component';
 import { EditRestaurantComponent } from './Component/edit-restaurant/edit-restaurant.component';
 import { UserRouteGuard } from './user-route.guard';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  {path:'',component:WelcomeComponent},
+  {path:'',component:DashboardComponent},
   {path:'user/login',component:UserLoginComponent},
   {path:'admin/login',component:AdminLoginComponent},
   {path:'user/:id',component:UserComponent,canActivate:[UserRouteGuard]},

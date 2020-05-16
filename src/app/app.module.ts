@@ -16,6 +16,7 @@ import { AddRestaurantComponent } from './Component/add-restaurant/add-restauran
 import { EditRestaurantComponent } from './Component/edit-restaurant/edit-restaurant.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './component/footer/footer.component';
     AddRestaurantComponent,
     EditRestaurantComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <div class="container">
+<div class="container" *ngFor="let restaurent of restaurents">
+    Name:{{restaurent.restaurentName}}   <br>
+     Rating:{{restaurent.restaurentRating}} <br>  
+     Address:{{restaurent.restaurentAdress}}  <br> 
+     <span *ngIf="restaurent.isActive">Opend</span> <br>
+     <span *ngIf="!restaurent.isActive">Closed</span>
+    <button (click)="menu(restaurent.restaurentId,restaurent.restaurentName)">see menu</button>
+</div></div>
