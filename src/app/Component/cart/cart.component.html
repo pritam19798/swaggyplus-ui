@@ -1,1 +1,11 @@
 <p>cart works!</p>
+
+<ul>
+    <li *ngFor="let dish of dishes">
+        <img src={{dish.imageUrl}} alt={{dish.dishName}} style="width:128px;height:128px;"><br>
+        {{dish.dishName}} price {{dish.price}}
+        <button class="btn btn-primary" (click)="deleteCart(dish.dishId)">remove</button>
+    </li>
+</ul>
+
+<h1>total Price: {{totalPrice}}</h1>

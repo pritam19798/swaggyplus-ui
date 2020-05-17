@@ -9,25 +9,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a *ngIf="!service.islogin()" class="nav-link" routerLink="">Home</a>
-              <a *ngIf="service.islogin()" class="nav-link">{{userName}}</a>
+              <a *ngIf="!service.islogin()  && !aService.isadminlogin()" class="nav-link" routerLink="">Home</a>
+              <a *ngIf="service.islogin()" class="nav-link">{{this.service.userName}}</a>
+              <a *ngIf="aService.isadminlogin()" (click)="goadmin()" class="nav-link">{{this.aService.adminName}}</a>
             </li>
-            <li *ngIf="!service.islogin()" class="nav-item dropdown">
+            <li *ngIf="!service.islogin() && !aService.isadminlogin()" class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Login
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" routerLink="user/login">User</a>
-                <a class="dropdown-item" href="#">Admin</a>
+                <a class="dropdown-item" routerLink="admin/login">Admin</a>
               </div>
             </li>
-              <li><a *ngIf="service.islogin()"  class="nav-link" routerLink="" (click)="sesclr()">Logout</a></li>
+            <li><a *ngIf="service.islogin()"  class="nav-link"  (click)="restaurents()">Restaurents</a></li>
+            <li><a *ngIf="service.islogin() || aService.isadminlogin()"  class="nav-link"  (click)="sesclr()">Logout</a></li>
            
           </ul>
           <img *ngIf="service.islogin()" src="https://image.flaticon.com/icons/png/512/34/34627.png" width="2%" height="2%">&nbsp;
-          <a *ngIf="service.islogin()" href="#" class="btn btn-info btn-lg">
+          <button *ngIf="service.islogin()" (click)="carthandle()" class="btn btn-info btn-lg">
             Cart
-          </a>&nbsp;
+          </button>&nbsp;
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

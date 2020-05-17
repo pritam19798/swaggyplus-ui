@@ -2,4 +2,28 @@
 
 <button (click)="addRestaurent()">Add new restaurent</button>
 <br>
-<button (click)="EditRestaurent()">Edit new restaurent</button>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container"><br><h1 style="font-size:40px;
+    font-family:Impact, Charcoal, sans-serif;
+    color:rgb(142, 167, 241);
+    font-style: italic">RESTAURENTS</h1></div>
+      <div class="container" align="center">
+        <div class="row">
+       
+    <div class="col-sm-3"  *ngFor="let restaurent of restaurents">
+       <h2> {{restaurent.restaurentName}} </h2>  <br>
+        <h4> Rating:&nbsp; {{restaurent.restaurentRating}}<span class="fa fa-star checked"></span> </h4>
+        <h6> Address:&nbsp;{{restaurent.restaurentAdress}} </h6>
+       <h3><span *ngIf="restaurent.isActive">Open</span> <br>
+         <span *ngIf="!restaurent.isActive">Closed</span></h3>
+         <br>
+        <button class="btn btn-primary" (click)="menu(restaurent.restaurentId,restaurent.restaurentName)">MENU</button>
+        <button (click)="EditRestaurent(restaurent.restaurentId,restaurent.restaurentName)">Edit new restaurent</button>
+        <hr>
+    </div><br>
+    </div>
+    </div>
+    

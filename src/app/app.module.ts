@@ -17,6 +17,10 @@ import { EditRestaurantComponent } from './Component/edit-restaurant/edit-restau
 import { MenuComponent } from './component/menu/menu.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
+import { UserRegistrationComponent } from './component/user-registration/user-registration.component';
+import { DishComponent } from './component/dish/dish.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
     EditRestaurantComponent,
     MenuComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserRegistrationComponent,
+    DishComponent,
   ],
   imports: [
     BrowserModule,

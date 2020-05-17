@@ -1,21 +1,6 @@
-<p>add-restaurant works!</p>
-<label >Name:  </label>
-<input type="text" name="restaurentName" id="name" [(ngModel)]="restaurent.restaurentName" required>
-<br>
-<label >Address:  </label>
-<input type="text" name="restaurentAddress" id="address" [(ngModel)]="restaurent.restaurentAdress" required>
-<br>
-<label >Rating:  </label>
-<input type="number" name="restaurentRating" id="rating" [(ngModel)]="restaurent.restaurentRating" required>
-<br>
-<label >isActive:  </label><br>
-<input type="radio" name="restaurentIsActive" id="isActive" value="true" (change)="radiochangeHandeller($event)" checked><i>true</i><br>
-<input type="radio" name="restaurentIsActive" id="isActive" value="false" (change)="radiochangeHandeller($event)"><i>false</i>
-<br>
+<p>dish works!</p>
 
-<p>add one dish</p>
-<p>more dish can be added in edit restaurent</p>
-
+<p>add dish to restaurent</p>
 <label >Name:  </label>
 <input type="text" name="dishtName" id="dishtName" [(ngModel)]="dish.dishName" required>
 <br>
@@ -39,5 +24,4 @@
 <p>selected isVeg: {{dish.isVeg}} </p>
 <p>selected freeDelivery: {{dish.freeDelivery}} </p>
 
-<button class="btn btn-primary" (click)="addhandeller()">Add</button>
-
+<button class="btn btn-primary" (click)="updateHandel()">Update Dish</button>

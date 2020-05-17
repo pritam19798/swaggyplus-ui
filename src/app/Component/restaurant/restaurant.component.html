@@ -2,6 +2,7 @@
     font-family:Impact, Charcoal, sans-serif;
     color:rgb(142, 167, 241);
     font-style: italic">{{this.restaurentName}} Restaurent Dishes</h1></div>
+    <h1>{{message}}</h1>
       <div class="container" align="center">
         <div class="row">
         <div class="col-sm-3" *ngFor="let dish of dishes">
@@ -9,7 +10,8 @@
            <h4> {{dish.dishName}} at Rs. {{dish.price}}</h4>
             <p>About:&nbsp;{{dish.shortDescription}}</p>
            <h5> <span *ngIf="dish.freeDelivery">Avaliable for free delivery</span></h5>
-            <button class="btn btn-primary">Add to cart</button>
+            <button *ngIf="service.islogin()" class="btn btn-primary" (click)="addtoCart(dish.dishId,dish.dishName)">Add to cart</button>
+            <button *ngIf="aService.isadminlogin()" class="btn btn-primary" (click)="edit(dish.dishId,dish.dishName)">Edit Dish</button>
             <hr>
 
 </div>

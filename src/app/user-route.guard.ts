@@ -15,7 +15,7 @@ export class UserRouteGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-      if(this.service.islogin()){
+      if(this.service.islogin() ){
         return true;
       }
       this.router.navigate(['user/login'])

@@ -12,18 +12,27 @@ import { AddRestaurantComponent } from './Component/add-restaurant/add-restauran
 import { EditRestaurantComponent } from './Component/edit-restaurant/edit-restaurant.component';
 import { UserRouteGuard } from './user-route.guard';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
+import { UserRegistrationComponent } from './component/user-registration/user-registration.component';
+import { AdminRouteGuard } from './admin-route.guard';
+import { DishComponent } from './component/dish/dish.component';
+
+
 
 
 const routes: Routes = [
   {path:'',component:DashboardComponent},
+  {path:'user/registration',component:UserRegistrationComponent},
   {path:'user/login',component:UserLoginComponent},
-  {path:'admin/login',component:AdminLoginComponent},
   {path:'user/:id',component:UserComponent,canActivate:[UserRouteGuard]},
   {path:'restaurant/:id',component:RestaurantComponent,canActivate:[UserRouteGuard]},
-  {path:'cart',component:CartComponent},
-  {path:'admin/:id',component:AdminComponent},
-  {path:'add-restaurant',component:AddRestaurantComponent},
-  {path:'edit-restaurant/:id',component:EditRestaurantComponent},
+  {path:'cart/:id',component:CartComponent,canActivate:[UserRouteGuard]},
+  
+  {path:'admin/login',component:AdminLoginComponent},
+  {path:'admin/:id',component:AdminComponent,canActivate:[AdminRouteGuard]},
+  {path:'admin/restaurant/:id',component:RestaurantComponent,canActivate:[AdminRouteGuard]},
+  {path:'add-restaurant',component:AddRestaurantComponent,canActivate:[AdminRouteGuard]},
+  {path:'edit-restaurant/:id',component:EditRestaurantComponent,canActivate:[AdminRouteGuard]},
+  {path:'dish-edit/:id',component:DishComponent,canActivate:[AdminRouteGuard]},
   
 ];
 

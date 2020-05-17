@@ -35,20 +35,24 @@ export class UserLoginComponent implements OnInit {
 
         this.apiservice.getUserName(this.message).subscribe(data=>{
           this.userName=data;
+          
           sessionStorage.setItem("userName",this.userName)
-        })
-          
-
-        if(this.message==this.user.userId){
+          sessionStorage.setItem("userType","USER")
+          this.apiservice.userName=this.userName
+          if(this.message==this.user.userId){
         
-          this.router.navigate(['user',this.message]);
-          
+            this.router.navigate(['user',this.message]);
+            
+            }
+          else{
+            this.alert="please give the right information";
           }
-        else{
-          this.alert="please give the right information";
-        }
-        
-      });
+        })
+      },
+      err=>{
+        this.alert="invalid credential"
+      }
+      );
      
         
   
