@@ -1,0 +1,22 @@
+.col-sm-7{
+    background-color: aliceblue;
+    border-radius: 3%;
+    border: 2px solid black;
+}
+.col-sm-3{
+    background-color: antiquewhite;
+    margin-bottom: 2%;
+    border-radius: 2%;
+   
+}
+img{
+    margin-top: 3%;
+}
+.item{
+    margin-top: 60%;
+}
+.price{
+    background-color: aliceblue;
+    margin-left: 5%;
+    border-radius: 3%;
+}

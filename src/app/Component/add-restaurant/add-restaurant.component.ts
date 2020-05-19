@@ -32,8 +32,12 @@ export class AddRestaurantComponent implements OnInit {
   radiochangeHandeller2(event){
     this.dish.setfreeDelivery(event.target.value)
   }
+  validate(){
+    return 1
+  }
 
   addhandeller(){
+    if(this.validate){
     //console.log(this.dish)
     this.restaurent.addDish(this.dish)
     console.log(this.restaurent)
@@ -46,6 +50,10 @@ export class AddRestaurantComponent implements OnInit {
 
       }
     )
+    }
+    else{
+      alert("Please fill all the details")
+    }
   }
 
 }

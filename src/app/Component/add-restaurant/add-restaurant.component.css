@@ -1,0 +1,13 @@
+.form{
+    background-color: aliceblue;
+    border-radius: 3%;
+    border: 2px solid black;
+}
+label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+button{
+    margin-bottom: 2%;
+ 
+}

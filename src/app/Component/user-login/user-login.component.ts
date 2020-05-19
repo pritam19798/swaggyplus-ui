@@ -50,7 +50,7 @@ export class UserLoginComponent implements OnInit {
         })
       },
       err=>{
-        this.alert="invalid credential"
+        alert("Invalid credential!!!Please Try Again!!")
       }
       );
      

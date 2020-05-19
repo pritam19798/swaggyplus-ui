@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from './app.constants';
 import { Restaurent } from './restaurent';
+import { Admin1 } from './admin';
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +58,9 @@ export class AdminService {
   editDish(dishId,dish){
     return this.http.put(`${API_URL}/res/editDish?id=${dishId}`,dish)
   }
-
+  adminSignUp(admin:Admin1){
+    return this.http.post(`${API_URL}/admin/addAdmin`,admin,{responseType:'text' as 'json'})
+  }
 
 
 }
@@ -65,10 +68,12 @@ export class AdminService {
 
 export class Admin{
   adminId:string;
-	password:string;
+  password:string;
+ 
 	constructor(adminId:string,password:string) {
 		
 		this.adminId = adminId;
-		this.password = password;
+    this.password = password;
+   
   }
 }

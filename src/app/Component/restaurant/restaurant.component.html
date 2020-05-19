@@ -1,8 +1,13 @@
-<div class="container"><br><h1 style="font-size:40px;
+<br>
+<div style="background-color: aliceblue;" class="container"><br><h1 style="font-size:40px;
     font-family:Impact, Charcoal, sans-serif;
-    color:rgb(142, 167, 241);
-    font-style: italic">{{this.restaurentName}} Restaurent Dishes</h1></div>
-    <h1>{{message}}</h1>
+    color:rgb(14, 71, 241);
+    font-style: italic">{{this.restaurentName}} Restaurent Dishes</h1>
+   <hr>
+   <h4>Rating: {{this.rating}}</h4>  
+
+  </div>
+    
       <div class="container" align="center">
         <div class="row">
         <div class="col-sm-3" *ngFor="let dish of dishes">

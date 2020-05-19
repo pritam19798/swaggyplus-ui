@@ -1,11 +1,51 @@
 <p>cart works!</p>
+<div  class="container">
+      <div class="row">
+            <div class="col-sm-7" >
+                <h3>My Cart</h3>
+                <hr>
+               
+                <div class="row" *ngFor="let dish of dishes">
+                   <div class="col-sm-3" style=" margin-left: 11%;">
+                     <img src={{dish.imageUrl}} alt={{dish.dishName}} style="width:128px;height:128px;">
+                   </div>
+                   <div class="col-sm-3">
+                    <h6> {{dish.dishName}}</h6>
+                    
+                      <h5>price</h5><h3>{{dish.price}}</h3>
+                    </div>
+                    <div class="col-sm-3">
+                     <button style="float: right;margin-top: 50%;" class="btn btn-primary" (click)="deleteCart(dish.dishId)">remove</button>
+                    </div>
+                 
+                 
+                </div>
+               
+            </div>
 
-<ul>
-    <li *ngFor="let dish of dishes">
-        <img src={{dish.imageUrl}} alt={{dish.dishName}} style="width:128px;height:128px;"><br>
-        {{dish.dishName}} price {{dish.price}}
-        <button class="btn btn-primary" (click)="deleteCart(dish.dishId)">remove</button>
-    </li>
-</ul>
 
-<h1>total Price: {{totalPrice}}</h1>
+ 
+       
+        <div class="col-sm-4"   >
+            <div class="price">
+           <h3>Price:</h3>
+             <hr>
+             <h5>
+             <div *ngFor="let dish of dishes">
+               <div class="row"> 
+                   <div style="margin-left: 12%;" class="col-sm-2">{{dish.dishName}}:</div><div style="margin-left: 30%;" class="col-sm-2"> {{dish.price}}</div>
+               </div>
+             </div>
+             </h5>
+             <hr>
+             <h5>
+                  <div class="row"> 
+                      <div style="margin-left: 12%;" class="col-sm-2"> Totalprice:</div><div style="margin-left: 30%;" class="col-sm-2">{{totalPrice}}</div>
+               </div>
+                </h5><hr>
+                <button style="float: right; " class="btn btn-primary" >PLACE ORDER</button>
+         </div>
+         </div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

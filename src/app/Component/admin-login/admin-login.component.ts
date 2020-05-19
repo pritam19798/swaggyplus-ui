@@ -42,12 +42,12 @@ export class AdminLoginComponent implements OnInit {
             
             }
           else{
-            this.alert="please give the right information";
+            alert("please give the right information");
           }
         })
       },
       err=>{
-        this.alert="invalid credential"
+        alert("please give the right information");
       }
       );
   }

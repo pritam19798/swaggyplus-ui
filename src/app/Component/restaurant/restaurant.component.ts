@@ -19,10 +19,12 @@ export class RestaurantComponent implements OnInit {
   
   restaurentName:any
   restaurentId:any
+  rating:any
   dishes:any
   message:any
   ngOnInit(): void {
     this.referseh()
+
   }
 
   referseh(){
@@ -44,9 +46,10 @@ export class RestaurantComponent implements OnInit {
         console.log(data)
         this.referseh()
         this.message=`${dishName} added to cart`
+        alert(this.message)
       }
     )
-
+   
 
   }
   edit(dishId,dishName){

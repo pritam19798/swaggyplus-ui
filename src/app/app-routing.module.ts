@@ -15,6 +15,7 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { UserRegistrationComponent } from './component/user-registration/user-registration.component';
 import { AdminRouteGuard } from './admin-route.guard';
 import { DishComponent } from './component/dish/dish.component';
+import { AdminRegistrationComponent } from './Component/admin-registration/admin-registration.component';
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'restaurant/:id',component:RestaurantComponent,canActivate:[UserRouteGuard]},
   {path:'cart/:id',component:CartComponent,canActivate:[UserRouteGuard]},
   
+  {path:'admin/registration',component:AdminRegistrationComponent},
   {path:'admin/login',component:AdminLoginComponent},
   {path:'admin/:id',component:AdminComponent,canActivate:[AdminRouteGuard]},
   {path:'admin/restaurant/:id',component:RestaurantComponent,canActivate:[AdminRouteGuard]},

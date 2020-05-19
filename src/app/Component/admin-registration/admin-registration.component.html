@@ -3,19 +3,19 @@
 <div class="container" align="center">
     <div class="row">
        <div class="col-sm-6">
-           <h3>Admin Login</h3>
+           <h3>Admin Sign Up</h3>
 <form align="center">
 
 <H2>
-<label style="font-size:20px;margin-left:3%">UserId</label>
-<input style="width:40%; float:right; margin-right: 10%;" type="text" class="form-control" [(ngModel)]="admin.adminId" id="userId" name="user"> <br>
+<label style="font-size:20px;margin-left:3%">Admin Name</label>
+<input style="width:40%; float:right; margin-right: 10%;" type="text" class="form-control" [(ngModel)]="admin.name" id="userId" name="user"> <br>
 <label for="pass" style="font-size:20px;margin-left:3%">Password</label>
 <input style="width:40%; float:right; margin-right: 10%;" type="password" class="form-control" [(ngModel)]="admin.password" id="pass" name="inppass"><br>
 </H2>
-<br><button class="btn btn-primary" (click)="loginHandle()">Login</button><br><hr>
+<br><button class="btn btn-primary" (click)="registrationHandle()">Sign Up</button><br><hr>
 
 </form>
-Dont have an account?<a routerLink="/admin/registration">click here</a>
+All ready have an account?<a routerLink="/admin/login">click here</a>
 </div>
 <div class="col-sm-4"><br><br>
   <h3 style="font-size: 60px; color: aliceblue; margin-left: 20%;">Good Food <br>Good Life</h3>
@@ -25,3 +25,4 @@ Dont have an account?<a routerLink="/admin/registration">click here</a>
 </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
