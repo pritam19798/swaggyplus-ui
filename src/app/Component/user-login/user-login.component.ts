@@ -41,11 +41,11 @@ export class UserLoginComponent implements OnInit {
           this.apiservice.userName=this.userName
           if(this.message==this.user.userId){
         
-            this.router.navigate(['user',this.message]);
+            this.router.navigate(['user-dashboard',this.message]);
             
             }
           else{
-            this.alert="please give the right information";
+            alert("Invalid Credential!! please give the right information");
           }
         })
       },

@@ -36,6 +36,10 @@ export class UserService {
     return this.http.get(`${API_URL}/res/dishes?id=${restaurentId}`)
   }
 
+  getrestaurentById(restaurentId){
+    return this.http.get(`${API_URL}/res/restaurent?id=${restaurentId}`)
+  }
+
 
   //cart Area.....
 
@@ -51,6 +55,15 @@ export class UserService {
   }
   addToCart(userId,dishId){
     return this.http.post(`${API_URL}/user/${userId}/cart/dish?dishId=${dishId}`,{})
+  }
+
+  //search area.....
+  searchHandle(searchKey){
+    return this.http.get(`${API_URL}/res/restaurentNmae?name=${searchKey}`)
+  }
+
+  searchHandleDish(searchKey){
+    return this.http.get(`${API_URL}/res/dishName?name=${searchKey}`)
   }
 
 }

@@ -20,6 +20,8 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { UserRegistrationComponent } from './component/user-registration/user-registration.component';
 import { DishComponent } from './component/dish/dish.component';
 import { AdminRegistrationComponent } from './Component/admin-registration/admin-registration.component';
+import { SearchSpaceComponent } from './component/search-space/search-space.component';
+
 
 
 
@@ -42,6 +44,8 @@ import { AdminRegistrationComponent } from './Component/admin-registration/admin
     UserRegistrationComponent,
     DishComponent,
     AdminRegistrationComponent,
+    SearchSpaceComponent,
+    
   ],
   imports: [
     BrowserModule,

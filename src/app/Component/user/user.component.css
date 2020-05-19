@@ -4,10 +4,10 @@ h2{
     color:rgb(1, 4, 14);
     font-style: italic
 }
-.col-sm-3{
+.myclass{
     background-color: aliceblue;
     border-radius: 5%;
-    width: 100%;
+    width: 80%;
     row-gap: 5px;
     margin-right: 20px;
     margin-left: 20px;
@@ -15,7 +15,7 @@ h2{
     margin-top: 20px;
 
 }
-.col-sm-3:hover{
+.myclass:hover{
     background-color: rgb(179, 245, 179);
    border: 2px solid rgb(32, 10, 230);
     row-gap: 5px;

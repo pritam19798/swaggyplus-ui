@@ -16,21 +16,25 @@ import { UserRegistrationComponent } from './component/user-registration/user-re
 import { AdminRouteGuard } from './admin-route.guard';
 import { DishComponent } from './component/dish/dish.component';
 import { AdminRegistrationComponent } from './Component/admin-registration/admin-registration.component';
+import { SearchSpaceComponent } from './component/search-space/search-space.component';
+//import { SearchComponent } from './Component/search/search.component';
 
 
 
 
 const routes: Routes = [
   {path:'',component:DashboardComponent},
+  
   {path:'user/registration',component:UserRegistrationComponent},
   {path:'user/login',component:UserLoginComponent},
-  {path:'user/:id',component:UserComponent,canActivate:[UserRouteGuard]},
+  {path:'user-dashboard/:id',component:UserComponent,canActivate:[UserRouteGuard]},
   {path:'restaurant/:id',component:RestaurantComponent,canActivate:[UserRouteGuard]},
   {path:'cart/:id',component:CartComponent,canActivate:[UserRouteGuard]},
+  {path:'search/:searchKey',component:SearchSpaceComponent,canActivate:[UserRouteGuard]},
   
   {path:'admin/registration',component:AdminRegistrationComponent},
   {path:'admin/login',component:AdminLoginComponent},
-  {path:'admin/:id',component:AdminComponent,canActivate:[AdminRouteGuard]},
+  {path:'admin-dashboard/:id',component:AdminComponent,canActivate:[AdminRouteGuard]},
   {path:'admin/restaurant/:id',component:RestaurantComponent,canActivate:[AdminRouteGuard]},
   {path:'add-restaurant',component:AddRestaurantComponent,canActivate:[AdminRouteGuard]},
   {path:'edit-restaurant/:id',component:EditRestaurantComponent,canActivate:[AdminRouteGuard]},

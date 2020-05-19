@@ -7,16 +7,18 @@
       <div class="container" align="center">
         <div class="row">
        
-    <div class="col-sm-3"  *ngFor="let restaurent of restaurents">
-       <h2> {{restaurent.restaurentName}} </h2>  <br>
-        <h4> Rating:&nbsp; {{restaurent.restaurentRating}}<span class="fa fa-star checked"></span> </h4>
-        <h6> Address:&nbsp;{{restaurent.restaurentAdress}} </h6>
-       <h3><span *ngIf="restaurent.isActive">Open</span> <br>
-         <span *ngIf="!restaurent.isActive">Closed</span></h3>
-         <br>
-        <button class="btn btn-primary" (click)="menu(restaurent.restaurentId,restaurent.restaurentName)">MENU</button>
-        <hr>
-    </div><br>
-    </div>
-    </div>
+          <div class="col-sm-4"  *ngFor="let restaurent of restaurents">
+            <div class="myclass" *ngIf="restaurent.isActive">
+              <h2> {{restaurent.restaurentName}} </h2>  <br>
+               <h4> Rating:&nbsp; {{restaurent.restaurentRating}}<span class="fa fa-star checked"></span> </h4>
+               <h6> Address:&nbsp;{{restaurent.restaurentAdress}} </h6>
+              <h3><span *ngIf="restaurent.isActive">Open</span> <br>
+                <span *ngIf="!restaurent.isActive">Closed</span></h3>
+                <br>
+               <button class="btn btn-primary" (click)="menu(restaurent.restaurentId,restaurent.restaurentName)">MENU</button>
+               <hr>
+             </div>
+          </div><br>
+          </div>
+          </div>
     

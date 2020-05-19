@@ -10,7 +10,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a *ngIf="!service.islogin()  && !aService.isadminlogin()" class="nav-link" routerLink="">Home</a>
-              <a *ngIf="service.islogin()" class="nav-link">{{this.service.userName}}</a>
+              <a *ngIf="service.islogin()" (click)="goauser()" class="nav-link">{{this.service.userName}}</a>
               <a *ngIf="aService.isadminlogin()" (click)="goadmin()" class="nav-link">{{this.aService.adminName}}</a>
             </li>
             <li *ngIf="!service.islogin() && !aService.isadminlogin()" class="nav-item dropdown">
@@ -30,9 +30,9 @@
           <button *ngIf="service.islogin()" (click)="carthandle()" class="btn btn-info btn-lg">
             Cart
           </button>&nbsp;
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <form *ngIf="service.islogin()" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search" [(ngModel)]="SearchKey">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="Search()">Search</button>
           </form>
           
          

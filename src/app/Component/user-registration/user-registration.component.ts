@@ -24,7 +24,7 @@ export class UserRegistrationComponent implements OnInit {
 
     this.service.userSignUp(this.user).subscribe(
       data=>{
-        this.alert=`hello ${this.user.name} you have successfully registered  please remeber your Login Id ${data}`
+        alert(`hello ${this.user.name} you have successfully registered  please remeber your Login Id ${data}`)
       }
     )
 

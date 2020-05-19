@@ -24,7 +24,7 @@ export class AdminRegistrationComponent implements OnInit {
     
     this.service.adminSignUp(this.admin).subscribe(
       data=>{
-        alert("You have created your account Successfully!!!Please remember your userId "+data)
+        alert(`hello ${this.admin.name} you have successfully registered  please remeber your Login Id ${data}`)
       }
     )
 

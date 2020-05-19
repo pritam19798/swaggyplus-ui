@@ -20,6 +20,7 @@ export class RestaurantComponent implements OnInit {
   restaurentName:any
   restaurentId:any
   rating:any
+  restaurent:any
   dishes:any
   message:any
   ngOnInit(): void {
@@ -29,13 +30,13 @@ export class RestaurantComponent implements OnInit {
 
   referseh(){
     this.restaurentId=this.route.snapshot.params['id']
-    this.restaurentName=this.service.restaurentName
-    this.service.getDish(this.restaurentId).subscribe(
+    
+    this.service.getrestaurentById(this.restaurentId).subscribe(
       data=>{
-        this.dishes=data
-        console.log(this.dishes)
-      },
-      err=>console.log(err)
+        this.restaurent=data
+        this.dishes=this.restaurent.dishes
+        console.log(data)
+      }
     )
   }
 

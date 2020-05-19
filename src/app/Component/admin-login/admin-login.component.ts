@@ -38,16 +38,16 @@ export class AdminLoginComponent implements OnInit {
           this.service.adminName=this.adminName
           if(this.adminId==this.admin.adminId){
         
-            this.router.navigate(['admin',this.adminId]);
+            this.router.navigate(['admin-dashboard',this.adminId]);
             
             }
           else{
-            alert("please give the right information");
+            alert("Wrong Credential!! please give the right information");
           }
         })
       },
       err=>{
-        alert("please give the right information");
+        alert("Wrong Credential!! please give the right information");
       }
       );
   }

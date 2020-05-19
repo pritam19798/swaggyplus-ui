@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
 
   userName:any;
   adminName:any
+  SearchKey:string=""
   constructor(
     public service:UserService,
     public aService:AdminService,
@@ -38,7 +39,7 @@ export class MenuComponent implements OnInit {
 
   restaurents(){
     let userId=sessionStorage.getItem("userId")
-    this.router.navigate(['user',userId]);
+    this.router.navigate(['user-dashboard',userId]);
 
   }
 
@@ -48,7 +49,17 @@ export class MenuComponent implements OnInit {
     
   }
   goadmin(){
-    this.router.navigate(['/admin',sessionStorage.getItem("adminId")])
+    this.router.navigate(['/admin-dashboard',sessionStorage.getItem("adminId")])
+  }
+  goauser(){
+    this.router.navigate(['user-dashboard',sessionStorage.getItem("userId")]);
   }
   
+
+
+
+  Search(){
+    this.router.navigate(['search',this.SearchKey])
+  }
+
 }

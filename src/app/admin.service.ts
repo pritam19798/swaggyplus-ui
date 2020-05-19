@@ -19,6 +19,11 @@ export class AdminService {
     console.log(admin)
     return this.http.post(`${API_URL}/admin/login`,admin,{responseType:'text' as 'json'});
   }
+
+  adminSignUp(admin:Admin1){
+    return this.http.post(`${API_URL}/admin/addAdmin`,admin,{responseType:'text' as 'json'})
+  }
+
   getAdminName(Id){
     console.log(Id)
     return this.http.get(`${API_URL}/admin/getAdminName?Id=${Id}`,{responseType:'text' as 'json'})
@@ -32,6 +37,10 @@ export class AdminService {
 
   getrestaurent(){
     return this.http.get(`${API_URL}/res/getrestaurent`)
+  }
+
+  getrestaurentById(restaurentId){
+    return this.http.get(`${API_URL}/res/restaurent?id=${restaurentId}`)
   }
 
   getresDetail(id){
@@ -58,9 +67,7 @@ export class AdminService {
   editDish(dishId,dish){
     return this.http.put(`${API_URL}/res/editDish?id=${dishId}`,dish)
   }
-  adminSignUp(admin:Admin1){
-    return this.http.post(`${API_URL}/admin/addAdmin`,admin,{responseType:'text' as 'json'})
-  }
+
 
 
 }
