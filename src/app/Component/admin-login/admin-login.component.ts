@@ -21,13 +21,24 @@ export class AdminLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  loginValidate(){
+    if(this.admin.adminId==""){
+      alert("Please enter Admin User-Id")
+      return 0
+    }
+    else if(this.admin.password==""){
+      alert("Password cannot be empty")
+      return 0
+    }
+    return 1
+  }
 
   loginHandle(){
-    console.log(this.admin)
+    if(this.loginValidate()){
+    
     this.service.adminValidation(this.admin).subscribe(
       data=>{
-        console.log(data)
+      
         this.adminId=data;
         sessionStorage.setItem("adminId",this.adminId)
         this.service.getAdminName(this.adminId).subscribe(data=>{
@@ -49,7 +60,7 @@ export class AdminLoginComponent implements OnInit {
       err=>{
         alert("Wrong Credential!! please give the right information");
       }
-      );
+      );}
   }
 
 }

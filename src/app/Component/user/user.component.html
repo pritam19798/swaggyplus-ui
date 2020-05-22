@@ -5,20 +5,26 @@
     color:rgb(142, 167, 241);
     font-style: italic">RESTAURENTS</h1></div>
       <div class="container" align="center">
-        <div class="row">
+        <div class="row" >
+
        
-          <div class="col-sm-4"  *ngFor="let restaurent of restaurents">
-            <div class="myclass" *ngIf="restaurent.isActive">
-              <h2> {{restaurent.restaurentName}} </h2>  <br>
-               <h4> Rating:&nbsp; {{restaurent.restaurentRating}}<span class="fa fa-star checked"></span> </h4>
-               <h6> Address:&nbsp;{{restaurent.restaurentAdress}} </h6>
-              <h3><span *ngIf="restaurent.isActive">Open</span> <br>
-                <span *ngIf="!restaurent.isActive">Closed</span></h3>
-                <br>
-               <button class="btn btn-primary" (click)="menu(restaurent.restaurentId,restaurent.restaurentName)">MENU</button>
-               <hr>
-             </div>
-          </div><br>
-          </div>
-          </div>
+    <div class="col-sm-4" *ngFor="let restaurent of restaurents">
+      <div class="myclass"  >
+        <h2> {{restaurent.restaurentName}} </h2>  <hr>
+         <h4> Rating:&nbsp; {{restaurent.restaurentRating}}<span class="fa fa-star checked"></span> </h4>
+         <h6> Address:&nbsp;{{restaurent.restaurentAdress}} </h6>
+        <h3 style="background-color: green; color: white;width: 50%;"><span *ngIf="restaurent.isActive">Open</span></h3>
+        <h3 style="background-color: red; color: white;width: 50%;"><span *ngIf="!restaurent.isActive">Closed</span></h3>
+          <br>
+         <button style="margin-bottom: 4%;" *ngIf="restaurent.isActive" class="btn btn-primary" (click)="menu(restaurent.restaurentId,restaurent.restaurentName)">MENU</button>
+         <p *ngIf="restaurent.isActive" style="color:green">Available Now!!!</p>
+         <button style="margin-bottom: 4%;" *ngIf="!restaurent.isActive" class="btn btn-primary" (click)="closeAlert()">MENU</button>
+         <p *ngIf="!restaurent.isActive" style="color: red;">Not Available Now!!!</p>
+         <br>
+        
+       </div><br>
+    </div><br>
+    </div>
+    </div>
+ 
     

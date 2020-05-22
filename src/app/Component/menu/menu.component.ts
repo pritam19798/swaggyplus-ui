@@ -56,10 +56,18 @@ export class MenuComponent implements OnInit {
   }
   
 
-
+SearchValidation(){
+  if(this.SearchKey==""){
+    alert("Please enter the name of restaurent or dishes for searching !!!!")
+    return 0
+  }
+  return 1
+}
 
   Search(){
+    if(this.SearchValidation()){
     this.router.navigate(['search',this.SearchKey])
-  }
+   
+  }}
 
 }

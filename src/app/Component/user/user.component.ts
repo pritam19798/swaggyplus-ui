@@ -38,5 +38,8 @@ export class UserComponent implements OnInit {
 
     this.router.navigate(['/restaurant',restaurentId])
   }
+  closeAlert(){
+    alert("Restaurent is not available now!!!")
+  }
 
 }

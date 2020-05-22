@@ -22,8 +22,24 @@ export class UserLoginComponent implements OnInit {
   userName:any;
   ngOnInit(): void {
   }
+  loginValidation(){
+  if(this.user.userId==""){
+    alert("please Enter User-Id!!")
+    return 0
+  }
+  else if(this.user.password==""){
+    alert("Password cannot be Empty")
+    return 0
+  }
+  else {
+    return 1
+  }
+
+  }
 
   loginHandle(){
+      
+    if(this.loginValidation()){
     let resp=this.apiservice.userValidation(this.user);
     
     resp.subscribe(
@@ -56,7 +72,7 @@ export class UserLoginComponent implements OnInit {
      
         
   
-    
+    }
     
 
   }

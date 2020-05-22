@@ -18,16 +18,28 @@ export class UserRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  signUpValidation(){
+    if(this.user.name==""){
+      alert("User-Name cannot be empty")
+      return 0
+    }
+    else if(this.user.password==""){
+      alert("Password cannot be empty")
+      return 0
+    }
+    else{
+      return 1
+    }
+  }
 
   registrationHandle(){
-
+   if(this.signUpValidation()){
     this.service.userSignUp(this.user).subscribe(
       data=>{
-        alert(`hello ${this.user.name} you have successfully registered  please remeber your Login Id ${data}`)
+        alert(`Hello ${this.user.name}!!! You have successfully registered ... please remeber your Login Id -${data}`)
       }
     )
-
+    }
   }
 
 }

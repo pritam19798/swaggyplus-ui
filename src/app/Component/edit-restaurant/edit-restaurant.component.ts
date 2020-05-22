@@ -57,7 +57,11 @@ export class EditRestaurantComponent implements OnInit {
    } else if(this.dish.imageUrl==null)
    {
      return 0
-   } else if(this.dish.isVeg==null)
+   }     else if(this.dish.imageUrl.length>255)
+   {
+     alert("Image link length must be less than 255 characters")
+     return 0
+   }else if(this.dish.isVeg==null)
    {
      return 0
    }

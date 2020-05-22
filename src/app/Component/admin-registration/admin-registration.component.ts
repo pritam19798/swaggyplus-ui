@@ -18,14 +18,26 @@ export class AdminRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  signUpValidation(){
+    if(this.admin.name==""){
+      alert("Admin-Name cannot be empty")
+      return 0
+    }
+    else if(this.admin.password==""){
+      alert("Password cannot be empty")
+      return 0
+    }
+    else{
+      return 1
+    }
+  }
 
   registrationHandle(){
-    
+    if(this.signUpValidation()){
     this.service.adminSignUp(this.admin).subscribe(
       data=>{
-        alert(`hello ${this.admin.name} you have successfully registered  please remeber your Login Id ${data}`)
+        alert(`Hello ${this.admin.name} you have successfully registered !!!! please remeber your Login Id - ${data}`)
       }
     )
-
+    }
 }}

@@ -22,9 +22,10 @@ export class SearchSpaceComponent implements OnInit {
 
    
     this.refresh()
-    
+   
 
   }
+ 
   refresh(){
     
     this.SearchKey=this.route.snapshot.params['searchKey']

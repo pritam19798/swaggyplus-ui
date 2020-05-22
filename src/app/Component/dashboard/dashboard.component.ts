@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/user.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +18,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   restaurents:any
+  
   userId=this.route.snapshot.params['id']
   ngOnInit(): void {
 
@@ -24,6 +26,7 @@ export class DashboardComponent implements OnInit {
       data=>{
         this.restaurents=data
         console.log(data)
+      
       },
       err=>console.log(err)
     )
@@ -36,6 +39,8 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/restaurant',restaurentId])
   }
 
-  
+  closeAlert(){
+    alert("Restaurent is not available now!!!")
+  }
 
 }
