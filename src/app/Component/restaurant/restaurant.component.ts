@@ -68,7 +68,7 @@ export class RestaurantComponent implements OnInit {
               }
             )
           }else{
-           let r=confirm("do you want to delete previous:")
+           let r=confirm("Previously You have added dish from another restaurant. Do you want to delete previous Items?")
            if (r == true) {
             this.service.addToCart(userId,dishId).subscribe(
               data=>{
