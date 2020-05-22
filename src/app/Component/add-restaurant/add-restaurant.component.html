@@ -16,7 +16,7 @@
 <input type="number" class="form-control"  name="restaurentRating" id="rating" [(ngModel)]="restaurent.restaurentRating" required>
 <br>
 <label >IsActive: {{restaurent.isActive}} </label><br>
-<input type="radio" name="restaurentIsActive" id="isActive" value="true" (change)="radiochangeHandeller($event)" checked><i>true</i><br>
+<input type="radio" name="restaurentIsActive" id="isActive" value="true" (change)="radiochangeHandeller($event)" ><i>true</i><br>
 <input type="radio" name="restaurentIsActive" id="isActive" value="false" (change)="radiochangeHandeller($event)"><i>false</i>
 <br>
 <div style="background-color: rgb(177, 168, 228);">
@@ -43,10 +43,10 @@
 <br>
 <label >IsVeg:  {{dish.isVeg}}</label><br>
 <input type="radio" name="isVeg" id="isVeg" value="true" (change)="radiochangeHandeller1($event)"><i>true</i><br>
-<input type="radio" name="isVeg" id="isVeg" value="false" (change)="radiochangeHandeller1($event)" checked><i>false</i>
+<input type="radio" name="isVeg" id="isVeg" value="false" (change)="radiochangeHandeller1($event)" ><i>false</i>
 <br>
 <label >FreeDelivery: {{dish.freeDelivery}} </label><br>
-<input type="radio" name="freeDelivery" id="freeDelivery" value="true" (change)="radiochangeHandeller2($event)" checked ><i>true</i><br>
+<input type="radio" name="freeDelivery" id="freeDelivery" value="true" (change)="radiochangeHandeller2($event)"  ><i>true</i><br>
 <input type="radio" name="freeDelivery" id="freeDelivery" value="false" (change)="radiochangeHandeller2($event)"><i>false</i>
 <br>
 <div align="center">

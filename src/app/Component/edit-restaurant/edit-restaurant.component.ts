@@ -39,7 +39,7 @@ export class EditRestaurantComponent implements OnInit {
     this.service.editRestaurent(id,this.restaurent).subscribe(
       data=>{
         console.log(data)
-        this.router.navigate(['/admin',sessionStorage.getItem("adminId")])
+        this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
       }
     )
   }
@@ -89,7 +89,7 @@ export class EditRestaurantComponent implements OnInit {
     this.service.addDishToRestaurent(restaurentId,this.dish).subscribe(
       data=>{
         console.log(data)
-        this.router.navigate(['/admin',sessionStorage.getItem("adminId")])
+        this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
       }
     )}
     else{

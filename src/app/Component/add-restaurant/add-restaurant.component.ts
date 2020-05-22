@@ -88,7 +88,7 @@ export class AddRestaurantComponent implements OnInit {
     adres.subscribe(
       data=>{
         console.log(data)
-        this.router.navigate(['admin',sessionStorage.getItem("adminId")])
+        this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
         alert("Restaurent is added Successfully")
       }
     )

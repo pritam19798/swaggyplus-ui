@@ -74,7 +74,7 @@ export class DishComponent implements OnInit {
       this.service.editDish(id,this.dish).subscribe(
         data=>{
           console.log(data)
-          this.router.navigate(['/admin',sessionStorage.getItem("adminId")])
+          this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
         }
       )
 
