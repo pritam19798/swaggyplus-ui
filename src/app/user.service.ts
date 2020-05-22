@@ -30,7 +30,7 @@ export class UserService {
   //Restaurent area....
 
   getrestaurent(){
-    return this.http.get(`${API_URL}/res/getrestaurent`)
+    return this.http.get(`${API_URL}/res/getrestaurent/active`)
   }
   getDish(restaurentId){
     return this.http.get(`${API_URL}/res/dishes?id=${restaurentId}`)
@@ -64,6 +64,10 @@ export class UserService {
 
   searchHandleDish(searchKey){
     return this.http.get(`${API_URL}/res/dishName?name=${searchKey}`)
+  }
+
+  getrestaurentId(userId){
+    return this.http.get(`${API_URL}/user/${userId}/cart/restaurent`)
   }
 
 }

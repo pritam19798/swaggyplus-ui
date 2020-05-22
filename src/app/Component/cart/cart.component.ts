@@ -55,4 +55,8 @@ export class CartComponent implements OnInit {
 
   }
 
+  placeOrder(){
+    alert(`your order has been placed`)
+  }
+
 }

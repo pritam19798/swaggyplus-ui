@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div  style="background-color: black;">
+<div  style="background-color: rgba(31, 29, 29, 0.6);">
 <div class="container">
 <br><h1 style="font-size:40px;
     font-family:Impact, Charcoal, sans-serif;
@@ -21,7 +21,10 @@
         <div class="col-sm-3" *ngFor="let dish of dishes">
             <img src={{dish.imageUrl}} alt={{dish.dishName}} width="100%" height="150"><br>
            <h4> {{dish.dishName}} at Rs. {{dish.price}}</h4>
-            <p>About:&nbsp;{{dish.shortDescription}}</p><h4 *ngIf="dish.isVeg" style="background-color:green; color: aliceblue; width: 50%;height: 8%;">Veg</h4>
+            <p>About:&nbsp;{{dish.shortDescription}}</p>
+            <img *ngIf="dish.isVeg" src="assets/Veg_and_non_veg_marks.jpg" width="20" height="20" alt="">
+            <h4 *ngIf="dish.isVeg" style="background-color:green; color: aliceblue; width: 50%;height: 8%;">Veg </h4>
+            <img *ngIf="!dish.isVeg" src="assets/non_veg_marks.jpg" width="20" height="20" alt="">
             <h4 *ngIf="!dish.isVeg" style="background-color: red; color: aliceblue; width: 60%;">Non-Veg</h4>
            <h5> <span *ngIf="dish.freeDelivery">Avaliable for free delivery</span></h5>
             <button *ngIf="service.islogin()" class="btn btn-primary" (click)="addtoCart(dish.dishId,dish.dishName)">Add to cart</button>

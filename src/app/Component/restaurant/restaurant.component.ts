@@ -52,16 +52,49 @@ export class RestaurantComponent implements OnInit {
   }
   addtoCart(dishId,dishName){
     let userId=sessionStorage.getItem("userId")
-    this.service.addToCart(userId,dishId).subscribe(
+    let restaurantId=this.route.snapshot.params['id']
+    this.service.getrestaurentId(userId).subscribe(
       data=>{
-        console.log(data)
-        this.referseh()
-        this.message=`${dishName} added to cart`
-        alert(this.message)
+        if(data!=-1){
+
+          if(data==restaurantId){
+            console.log(true)
+            this.service.addToCart(userId,dishId).subscribe(
+              data=>{
+                console.log(data)
+                this.referseh()
+                this.message=`${dishName} added to cart`
+                alert(this.message)
+              }
+            )
+          }else{
+           let r=confirm("do you want to delete previous:")
+           if (r == true) {
+            this.service.addToCart(userId,dishId).subscribe(
+              data=>{
+                console.log(data)
+                this.referseh()
+                this.message=`${dishName} added to cart`
+                alert(this.message)
+              }
+            )
+          } else {
+            console.log("nothing")
+          }
+          }
+
+        }else{
+          this.service.addToCart(userId,dishId).subscribe(
+            data=>{
+              console.log(data)
+              this.referseh()
+              this.message=`${dishName} added to cart`
+              alert(this.message)
+            }
+          )
+        } 
       }
     )
-   
-
   }
   edit(dishId,dishName){
     this.router.navigate(['dish-edit',dishId])

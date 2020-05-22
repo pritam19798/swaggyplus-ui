@@ -51,18 +51,52 @@ export class SearchSpaceComponent implements OnInit {
 
   }
 
-  addtoCart(dishId,dishName){
+  addtoCart(dishId,dishName,restaurantId){
     let userId=sessionStorage.getItem("userId")
-    this.service.addToCart(userId,dishId).subscribe(
+    // let restaurantId=this.route.snapshot.params['id']
+    this.service.getrestaurentId(userId).subscribe(
       data=>{
-        console.log(data)
-        this.refresh()
-        this.message=`${dishName} added to cart`
-        alert(this.message)
+        console.log(data,restaurantId)
+        if(data!=-1){
+
+          if(data==restaurantId){
+            console.log(true)
+            this.service.addToCart(userId,dishId).subscribe(
+              data=>{
+                console.log(data)
+                this.refresh()
+                this.message=`${dishName} added to cart`
+                alert(this.message)
+              }
+            )
+          }else{
+           let r=confirm("do you want to delete previous:")
+           if (r == true) {
+            this.service.addToCart(userId,dishId).subscribe(
+              data=>{
+                console.log(data)
+                this.refresh()
+                this.message=`${dishName} added to cart`
+                alert(this.message)
+              }
+            )
+          } else {
+            console.log("nothing")
+          }
+          }
+
+        }else{
+          this.service.addToCart(userId,dishId).subscribe(
+            data=>{
+              console.log(data)
+              this.refresh()
+              this.message=`${dishName} added to cart`
+              alert(this.message)
+            }
+          )
+        } 
       }
     )
-   
-
   }
 
 }

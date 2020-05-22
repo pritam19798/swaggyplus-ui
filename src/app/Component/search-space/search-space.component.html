@@ -2,7 +2,7 @@
 <div *ngIf="restaurent.isActive">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div  style="background-color: black;">
+<div  style="background-color: rgba(31, 29, 29, 0.6);">
 <div class="container">
 <br><h1 style="font-size:40px;
     font-family:Impact, Charcoal, sans-serif;
@@ -28,11 +28,12 @@
             <p>About:&nbsp;{{dish.shortDescription}}</p><h4 *ngIf="dish.isVeg" style="background-color:green; color: aliceblue; width: 50%;height: 8%;">Veg</h4>
             <h4 *ngIf="!dish.isVeg" style="background-color: red; color: aliceblue; width: 60%;">Non-Veg</h4>
            <h5> <span *ngIf="dish.freeDelivery">Avaliable for free delivery</span></h5>
-           <button *ngIf="service.islogin()" class="btn btn-primary" (click)="addtoCart(dish.dishId,dish.dishName)">Add to cart</button>
-            <hr>
+           <button *ngIf="service.islogin()" class="btn btn-primary" (click)="addtoCart(dish.dishId,dish.dishName,restaurent.restaurentId)">Add to cart</button>
+            
 
 </div>
         </div></div>
+        <hr>
     </div>
 </div>
 <!-- dish area -->
@@ -40,7 +41,7 @@
 <div *ngFor="let restaurent of dishes">
     <div *ngIf="restaurent.isActive">
     
-    <div  style="background-color: black;">
+        <div  style="background-color: rgba(31, 29, 29, 0.6);">
         <div class="container">
         <br><h1 style="font-size:40px;
             font-family:Impact, Charcoal, sans-serif;
@@ -66,11 +67,12 @@
                 <p>About:&nbsp;{{dish.shortDescription}}</p><h4 *ngIf="dish.isVeg" style="background-color:green; color: aliceblue; width: 50%;height: 8%;">Veg</h4>
                 <h4 *ngIf="!dish.isVeg" style="background-color: red; color: aliceblue; width: 60%;">Non-Veg</h4>
                <h5> <span *ngIf="dish.freeDelivery">Avaliable for free delivery</span></h5>
-               <button *ngIf="service.islogin()" class="btn btn-primary" (click)="addtoCart(dish.dishId,dish.dishName)">Add to cart</button>
-                <hr>
+               <button *ngIf="service.islogin()" class="btn btn-primary" (click)="addtoCart(dish.dishId,dish.dishName,restaurent.restaurentId)">Add to cart</button>
+               
     
     </div>
             </div></div>
+            <hr class="new2">
         </div>
     </div>
 
@@ -78,8 +80,9 @@
     <div *ngIf="!dishes.length">
         <br><br>
         <h2 align="center" style="background-color: aliceblue; color: red;margin-left: 25%;margin-right: 25%; border: 2px solid black; border-radius: 10%;">No results Found</h2>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
