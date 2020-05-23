@@ -22,7 +22,7 @@
                 <a class="dropdown-item" routerLink="admin/login">Admin</a>
               </div>
             </li>
-            <li><a *ngIf="service.islogin()"  class="nav-link"  (click)="restaurents()">Restaurents</a></li>
+            <li><a *ngIf="service.islogin()"  class="nav-link"  (click)="restaurents()">Restaurants</a></li>
             <li><a *ngIf="service.islogin() || aService.isadminlogin()"  class="nav-link"  (click)="sesclr()">Logout</a></li>
            
           </ul>
