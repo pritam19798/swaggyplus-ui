@@ -25,8 +25,10 @@ export class MenuComponent implements OnInit {
  
     
     this.userName=this.service.userName
+    this.userName=sessionStorage.getItem("userName")
     
     this.adminName=this.aService.adminName
+    this.adminName=sessionStorage.getItem("adminName")
     
 
  
@@ -66,7 +68,7 @@ SearchValidation(){
 
   Search(){
     if(this.SearchValidation()){
-    this.router.navigate(['search',this.SearchKey])
+    this.router.navigate(['dummy',this.SearchKey])
    
   }}
 

@@ -16,11 +16,11 @@ export class SearchSpaceComponent implements OnInit {
   constructor(
     private route:ActivatedRoute,
     public service:UserService,private router:Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
 
-   
+    this.SearchKey=this.route.snapshot.params['searchKey']
     this.refresh()
    
 

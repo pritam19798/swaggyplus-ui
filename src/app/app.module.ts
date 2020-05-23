@@ -21,6 +21,8 @@ import { UserRegistrationComponent } from './component/user-registration/user-re
 import { DishComponent } from './component/dish/dish.component';
 import { AdminRegistrationComponent } from './Component/admin-registration/admin-registration.component';
 import { SearchSpaceComponent } from './component/search-space/search-space.component';
+import { DummySearchComponent } from './Component/dummy-search/dummy-search.component';
+
 
 
 
@@ -45,6 +47,8 @@ import { SearchSpaceComponent } from './component/search-space/search-space.comp
     DishComponent,
     AdminRegistrationComponent,
     SearchSpaceComponent,
+    DummySearchComponent,
+    
     
   ],
   imports: [

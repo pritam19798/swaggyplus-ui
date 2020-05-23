@@ -17,6 +17,7 @@ import { AdminRouteGuard } from './admin-route.guard';
 import { DishComponent } from './component/dish/dish.component';
 import { AdminRegistrationComponent } from './Component/admin-registration/admin-registration.component';
 import { SearchSpaceComponent } from './component/search-space/search-space.component';
+import { DummySearchComponent } from './Component/dummy-search/dummy-search.component';
 //import { SearchComponent } from './Component/search/search.component';
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'restaurant/:id',component:RestaurantComponent,canActivate:[UserRouteGuard]},
   {path:'cart/:id',component:CartComponent,canActivate:[UserRouteGuard]},
   {path:'search/:searchKey',component:SearchSpaceComponent,canActivate:[UserRouteGuard]},
+  {path:'dummy/:searchKey',component:DummySearchComponent,canActivate:[UserRouteGuard]},
   
   {path:'admin/registration',component:AdminRegistrationComponent},
   {path:'admin/login',component:AdminLoginComponent},

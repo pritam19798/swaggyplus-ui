@@ -10,8 +10,8 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a *ngIf="!service.islogin()  && !aService.isadminlogin()" class="nav-link" routerLink="">Home</a>
-              <a *ngIf="service.islogin()" (click)="goauser()" class="nav-link">{{this.service.userName}}</a>
-              <a *ngIf="aService.isadminlogin()" (click)="goadmin()" class="nav-link">{{this.aService.adminName}}</a>
+              <a *ngIf="service.islogin()" (click)="goauser()" class="nav-link">{{userName}}</a>
+              <a *ngIf="aService.isadminlogin()" (click)="goadmin()" class="nav-link">{{adminName}}</a>
             </li>
             <li *ngIf="!service.islogin() && !aService.isadminlogin()" class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
