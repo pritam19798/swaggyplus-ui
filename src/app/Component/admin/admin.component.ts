@@ -20,7 +20,7 @@ export class AdminComponent implements OnInit {
     this.service.getrestaurent().subscribe(
       data=>{
         this.restaurents=data
-        console.log(data)
+        //console.log(data)
       },
       err=>console.log(err)
     )

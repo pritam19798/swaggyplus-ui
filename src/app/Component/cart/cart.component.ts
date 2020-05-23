@@ -27,12 +27,12 @@ export class CartComponent implements OnInit {
       data=>{
 
         this.dishes=data;
-        console.log(this.dishes)
+        //console.log(this.dishes)
         this.service.getcartprice(userId).subscribe(
           data=>{
 
             this.totalPrice=data
-            console.log(this.totalPrice)
+            //console.log(this.totalPrice)
 
           }
         )

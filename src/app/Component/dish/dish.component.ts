@@ -21,11 +21,11 @@ export class DishComponent implements OnInit {
   }
   refresh(){
     let id=this.route.snapshot.params['id']
-    console.log(id)
+    //console.log(id)
     this.service.getdish(id).subscribe(
       data=>{
         this.dish=data
-        console.log(data)
+        //console.log(data)
       }
     )
    
@@ -73,7 +73,7 @@ export class DishComponent implements OnInit {
       let id=this.route.snapshot.params['id']
       this.service.editDish(id,this.dish).subscribe(
         data=>{
-          console.log(data)
+          //console.log(data)
           this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
         }
       )

@@ -37,7 +37,7 @@ export class RestaurantComponent implements OnInit {
       data=>{
         this.restaurent=data
         this.dishes=this.restaurent.dishes
-        console.log(data)
+        //console.log(data)
      
       }
     )
@@ -58,10 +58,10 @@ export class RestaurantComponent implements OnInit {
         if(data!=-1){
 
           if(data==restaurantId){
-            console.log(true)
+            //console.log(true)
             this.service.addToCart(userId,dishId).subscribe(
               data=>{
-                console.log(data)
+                //console.log(data)
                 this.referseh()
                 this.message=`${dishName} added to cart`
                 alert(this.message)
@@ -72,7 +72,7 @@ export class RestaurantComponent implements OnInit {
            if (r == true) {
             this.service.addToCart(userId,dishId).subscribe(
               data=>{
-                console.log(data)
+                //console.log(data)
                 this.referseh()
                 this.message=`${dishName} added to cart`
                 alert(this.message)
@@ -86,7 +86,7 @@ export class RestaurantComponent implements OnInit {
         }else{
           this.service.addToCart(userId,dishId).subscribe(
             data=>{
-              console.log(data)
+              //console.log(data)
               this.referseh()
               this.message=`${dishName} added to cart`
               alert(this.message)

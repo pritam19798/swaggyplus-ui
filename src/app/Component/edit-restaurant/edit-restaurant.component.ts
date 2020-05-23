@@ -26,7 +26,7 @@ export class EditRestaurantComponent implements OnInit {
     this.service.getresDetail(id).subscribe(
       data=>{
         this.restaurent=data
-        console.log(this.restaurent)
+        //console.log(this.restaurent)
       }
     )
 
@@ -35,10 +35,10 @@ export class EditRestaurantComponent implements OnInit {
     this.restaurent.isActive=event.target.value
   }
   updateHandeller(id){
-    console.log(id)
+    //console.log(id)
     this.service.editRestaurent(id,this.restaurent).subscribe(
       data=>{
-        console.log(data)
+        //console.log(data)
         this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
       }
     )
@@ -85,10 +85,10 @@ export class EditRestaurantComponent implements OnInit {
  
   addDishhandeller(restaurentId){
     if(this.validate()){
-    console.log(this.dish)
+    //console.log(this.dish)
     this.service.addDishToRestaurent(restaurentId,this.dish).subscribe(
       data=>{
-        console.log(data)
+        //console.log(data)
         this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
       }
     )}

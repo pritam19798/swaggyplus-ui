@@ -46,7 +46,7 @@ export class UserLoginComponent implements OnInit {
       data=>{
         
         this.message=data
-        console.log(this.message);
+        //console.log(this.message);
         sessionStorage.setItem("userId",this.message)
 
         this.apiservice.getUserName(this.message).subscribe(data=>{

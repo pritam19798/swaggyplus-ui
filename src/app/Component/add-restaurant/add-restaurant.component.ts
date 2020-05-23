@@ -82,12 +82,12 @@ export class AddRestaurantComponent implements OnInit {
     if(this.addResValidation()){
     //console.log(this.dish)
     this.restaurent.addDish(this.dish)
-    console.log(this.restaurent)
+    //console.log(this.restaurent)
     let adres=this.service.addRestaurent(this.restaurent)
-    console.log(adres)
+    //console.log(adres)
     adres.subscribe(
       data=>{
-        console.log(data)
+        //console.log(data)
         this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
         alert("Restaurent is added Successfully")
       }

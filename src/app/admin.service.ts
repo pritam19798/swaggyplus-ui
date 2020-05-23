@@ -16,7 +16,7 @@ export class AdminService {
   ) { }
 
   adminValidation(admin){
-    console.log(admin)
+    //console.log(admin)
     return this.http.post(`${API_URL}/admin/login`,admin,{responseType:'text' as 'json'});
   }
 
@@ -25,7 +25,7 @@ export class AdminService {
   }
 
   getAdminName(Id){
-    console.log(Id)
+    //console.log(Id)
     return this.http.get(`${API_URL}/admin/getAdminName?Id=${Id}`,{responseType:'text' as 'json'})
   }
 

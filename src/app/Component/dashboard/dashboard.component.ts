@@ -25,12 +25,12 @@ export class DashboardComponent implements OnInit {
     this.service.getrestaurent().subscribe(
       data=>{
         this.restaurents=data
-        console.log(data)
+        
       
       },
       err=>console.log(err)
     )
-    console.log(this.userId)
+    //console.log(this.userId)
 
   }
   menu(restaurentId,restaurentName){

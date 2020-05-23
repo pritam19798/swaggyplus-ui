@@ -33,12 +33,12 @@ export class SearchSpaceComponent implements OnInit {
       this.service.searchHandle(this.SearchKey).subscribe(
         data=>{
           this.restaurents=data
-          console.log(this.restaurents)
+          //console.log(this.restaurents)
           //alert(this.restaurent.restaurentAdress)
           this.service.searchHandleDish(this.SearchKey).subscribe(
             data=>{
               this.dishes=data
-              console.log(this.dishes)
+              //console.log(this.dishes)
             }
           )
         }
@@ -56,14 +56,14 @@ export class SearchSpaceComponent implements OnInit {
     // let restaurantId=this.route.snapshot.params['id']
     this.service.getrestaurentId(userId).subscribe(
       data=>{
-        console.log(data,restaurantId)
+        //console.log(data,restaurantId)
         if(data!=-1){
 
           if(data==restaurantId){
-            console.log(true)
+            //console.log(true)
             this.service.addToCart(userId,dishId).subscribe(
               data=>{
-                console.log(data)
+                //console.log(data)
                 this.refresh()
                 this.message=`${dishName} added to cart`
                 alert(this.message)
@@ -74,7 +74,7 @@ export class SearchSpaceComponent implements OnInit {
            if (r == true) {
             this.service.addToCart(userId,dishId).subscribe(
               data=>{
-                console.log(data)
+                //console.log(data)
                 this.refresh()
                 this.message=`${dishName} added to cart`
                 alert(this.message)
@@ -88,7 +88,7 @@ export class SearchSpaceComponent implements OnInit {
         }else{
           this.service.addToCart(userId,dishId).subscribe(
             data=>{
-              console.log(data)
+              //console.log(data)
               this.refresh()
               this.message=`${dishName} added to cart`
               alert(this.message)

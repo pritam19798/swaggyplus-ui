@@ -22,14 +22,14 @@ export class UserComponent implements OnInit {
     this.service.getrestaurent().subscribe(
       data=>{
         this.restaurents=data
-        console.log(data)
+        //console.log(data)
       },
       err=>console.log(err)
     )
-    console.log(this.userId)
-    this.service.getUserName(sessionStorage.getItem("userId")).subscribe(
-      data=>console.log(data)
-    )
+    //console.log(this.userId)
+    // this.service.getUserName(sessionStorage.getItem("userId")).subscribe(
+    //   data=>console.log(data)
+    // )
 
   }
   

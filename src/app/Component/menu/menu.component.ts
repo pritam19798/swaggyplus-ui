@@ -23,11 +23,11 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
  
-    console.log(this.service.userName)
+    
     this.userName=this.service.userName
-    console.log(this.aService.adminName)
+    
     this.adminName=this.aService.adminName
-    console.log(this.aService.isadminlogin())
+    
 
  
   }
