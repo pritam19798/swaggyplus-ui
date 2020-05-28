@@ -37,8 +37,8 @@ export class AdminComponent implements OnInit {
   menu(restaurentId,restaurentName){
 
     this.service.restaurentName=restaurentName
-
+   
     this.router.navigate(['/admin/restaurant',restaurentId])
-
+    sessionStorage.setItem("restaurantId",restaurentId)
   }
 }

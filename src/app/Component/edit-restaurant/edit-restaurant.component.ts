@@ -34,14 +34,41 @@ export class EditRestaurantComponent implements OnInit {
   radiochangeHandeller(event){
     this.restaurent.isActive=event.target.value
   }
+  validateRestaurent(){
+    if(this.restaurent.restaurentName==""){
+      alert("Restaurant Name can not be empty!!!")
+      return 0
+    }
+    if(this.restaurent.restaurentAdress==""){
+      alert("Restaurant Address can not be empty!!!")
+      return 0
+    }
+    if(this.restaurent.restaurentRating==null){
+      alert("Restaurant Rating can not be empty!!!")
+      return 0
+    }
+    if(this.restaurent.restaurentRating>5){
+      this.restaurent.restaurentRating=5
+      return 1
+    }
+    if(this.restaurent.restaurentRating<0){
+      this.restaurent.restaurentRating=0
+      return 1
+    }
+    
+    return 1
+  }
   updateHandeller(id){
     //console.log(id)
+    if(this.validateRestaurent()){
     this.service.editRestaurent(id,this.restaurent).subscribe(
       data=>{
         //console.log(data)
         this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
+        alert("Restaurant Details are updated!!!")
       }
     )
+    }
   }
  validate(){
    if(this.dish.dishName==null){

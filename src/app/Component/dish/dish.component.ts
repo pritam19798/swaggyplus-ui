@@ -39,25 +39,37 @@ export class DishComponent implements OnInit {
   }
 
   validate(){
-    if(this.dish.dishName==null){
+    if(this.dish.dishName==""){
+      alert("DishName cannot be empty!!")
       return 0
     }
-    else if(this.dish.shortDescription==null)
+    else if(this.dish.shortDescription=="")
     {
+      alert("Dish Description cannot be empty!!")
       return 0
     }
     else if(this.dish.freeDelivery==null)
     {
+      alert("Dish deliverystatus cannot be empty!!")
       return 0
-    } else if(this.dish.imageUrl==null)
+    } else if(this.dish.imageUrl=="")
     {
+      alert("Dish imageurl cannot be empty!!")
       return 0
-    } else if(this.dish.isVeg==null)
+    }
+    else if(this.dish.imageUrl.length>255)
     {
+      alert("Image link length must be less than 255 characters")
+      return 0
+    }
+    else if(this.dish.isVeg==null)
+    {
+      alert("Please select dish is veg or not!!")
       return 0
     }
     else if(this.dish.price==null)
     {
+      alert("Dish price cannot be empty!!")
       return 0
     }
     else{
@@ -68,20 +80,19 @@ export class DishComponent implements OnInit {
  
 
   updateHandel(){
-    if(this.validate){
+    if(this.validate()){
 
       let id=this.route.snapshot.params['id']
       this.service.editDish(id,this.dish).subscribe(
         data=>{
           //console.log(data)
-          this.router.navigate(['admin-dashboard',sessionStorage.getItem("adminId")])
+          this.router.navigate(['/admin/restaurant',sessionStorage.getItem("restaurantId")])
+          alert("Dish Details are Updated!!")
         }
       )
 
     }
-    else{
-      alert("Please Enter All details correctly!!!")
-    }
+   
 
   }
 

@@ -44,6 +44,13 @@ export class AddRestaurantComponent implements OnInit {
     }else if(this.restaurent.restaurentRating==null){
       alert("Restaurent Rating is empty")
       return 0
+    } else if(this.restaurent.restaurentRating>5){
+      this.restaurent.restaurentRating=5
+      return 1
+    }
+        else if(this.restaurent.restaurentRating<0){
+      this.restaurent.restaurentRating=0
+      return 1
     }
    else if(this.restaurent.isActive==null){
      alert("Please select if the restaurent is active or not!!")
