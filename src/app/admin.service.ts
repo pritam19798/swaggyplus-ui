@@ -32,6 +32,10 @@ export class AdminService {
   isadminlogin(){
     return !(sessionStorage.getItem("adminId")==null) && (sessionStorage.getItem("adminType")=="ADMIN")
   }
+
+  getCurrentAdminName(){
+    return sessionStorage.getItem("adminName")
+  }
  
 
 

@@ -26,9 +26,11 @@ export class MenuComponent implements OnInit {
     
     this.userName=this.service.userName
     this.userName=sessionStorage.getItem("userName")
+    this.userName=this.service.getCurrentUserName()
     
     this.adminName=this.aService.adminName
     this.adminName=sessionStorage.getItem("adminName")
+    this.adminName=this.aService.getCurrentAdminName();
     
 
  

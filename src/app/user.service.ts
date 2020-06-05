@@ -26,6 +26,10 @@ export class UserService {
   islogin(){
     return !(sessionStorage.getItem("userId")==null) && (sessionStorage.getItem("userType")=="USER")
   }
+
+  getCurrentUserName(){
+    return sessionStorage.getItem("userName")
+  }
  
   //Restaurent area....
 

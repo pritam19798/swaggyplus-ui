@@ -1,7 +1,7 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" style="font-size: large;" >Swaggy</a>
+        <a href="http://localhost:4200" class="navbar-brand" style="font-size: large;" >Swaggyplus</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,8 +10,8 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a *ngIf="!service.islogin()  && !aService.isadminlogin()" class="nav-link" routerLink="">Home</a>
-              <a *ngIf="service.islogin()" (click)="goauser()" class="nav-link">{{userName}}</a>
-              <a *ngIf="aService.isadminlogin()" (click)="goadmin()" class="nav-link">{{adminName}}</a>
+              <a *ngIf="service.islogin()" (click)="goauser()" class="nav-link">{{this.service.getCurrentUserName()}}</a>
+              <a *ngIf="aService.isadminlogin()" (click)="goadmin()" class="nav-link">{{this.aService.getCurrentAdminName()}}</a>
             </li>
             <li *ngIf="!service.islogin() && !aService.isadminlogin()" class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
