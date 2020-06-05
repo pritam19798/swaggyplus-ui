@@ -37,7 +37,7 @@
     </div>
 </div>
 <!-- dish area -->
-<div *ngIf="dishes.length">
+
 <div *ngFor="let restaurent of dishes">
     <div *ngIf="restaurent.isActive">
     
@@ -74,15 +74,25 @@
             </div></div>
             <hr class="new2">
         </div>
-    </div>
+</div>
+   
 
-<div *ngIf="!restaurents.length">
+<!-- <div *ngIf="!restaurents.length">
     <div *ngIf="!dishes.length">
         <br><br>
         <h2 align="center" style="background-color: aliceblue; color: red;margin-left: 25%;margin-right: 25%; border: 2px solid black; border-radius: 10%;">No results Found</h2>
       
     </div>
+</div> -->
+<div *ngIf="notFound">
+    
+    <h2> aaaaa </h2>
+    <h2 align="center" style="background-color: aliceblue; color: red;margin-left: 25%;margin-right: 25%; border: 2px solid black; border-radius: 10%;">
+        {{ notFoundMessage }}
+    </h2>
+      
+  
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
 
 

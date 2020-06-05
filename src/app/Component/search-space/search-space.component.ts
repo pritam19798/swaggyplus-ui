@@ -13,6 +13,8 @@ export class SearchSpaceComponent implements OnInit {
   restaurents:any
   dishes:any
   message:any
+  notFoundMessage:string
+  notFound:boolean
   constructor(
     private route:ActivatedRoute,
     public service:UserService,private router:Router
@@ -39,6 +41,11 @@ export class SearchSpaceComponent implements OnInit {
             data=>{
               this.dishes=data
               //console.log(this.dishes)
+              if(this.dishes.length==0 && this.restaurents.length==0){
+                this.notFound=true
+                this.notFoundMessage=`No restaurants or dish found containing ${this.SearchKey}`
+                console.log(this.notFound)
+              }
             }
           )
         }
